@@ -11,7 +11,7 @@ public class TestConversorRomanos
 	@Test
 	public void testSimple() 
 	{
-		ConversorRomanos2 gerador = new ConversorRomanos2();
+		ConversorRomanos2 gerador = new ConversorRomanos2(); 
 
 		assertEquals("MCMXC", gerador.geraNumeroRomano(1990));
 		assertEquals("MM", gerador.geraNumeroRomano(2000));
