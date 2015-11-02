@@ -37,7 +37,7 @@
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target name="TestConversorRomanos">
+    <target name="junit-romanos" depends="build">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
@@ -45,15 +45,7 @@
             <classpath refid="junit-romanos.classpath"/>
         </junit>
     </target>
-    <target name="junit-romanos">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="TestConversorRomanos" todir="${junit.output.dir}"/>
-            <classpath refid="junit-romanos.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
+    <target name="junitreport" depends="junit-romanos">
         <junitreport todir="${junit.output.dir}">
             <fileset dir="${junit.output.dir}">
                 <include name="TEST-*.xml"/>
