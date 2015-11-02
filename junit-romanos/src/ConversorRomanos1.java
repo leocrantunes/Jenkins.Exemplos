@@ -15,7 +15,7 @@ public class ConversorRomanos1
 		while (numero >= 1000)
 		{
 			result += "M";
-			numero = numero - 1000
+			numero = numero - 1000;
 		}
 		
 		while (numero >= 900)
