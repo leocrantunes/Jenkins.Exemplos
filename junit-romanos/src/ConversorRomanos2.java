@@ -17,7 +17,7 @@ public class ConversorRomanos2
 			while (numero >= limites[i])
 			{
 				result += letras[i];
-				numero -= limites[i];
+				numero -= limites[i]
 			}
 
 			int anterior = (i % 2 == 0) ? i+2 : i+1;
