@@ -8,7 +8,7 @@ public class ConversorRomanos2
 	public String geraNumeroRomano (int numero)
 	{
 		int limites[] = new int[] {1000, 500, 100, 50, 10, 5, 1};
-		char letras[] = new char[] {'D', 'C', 'L', 'X', 'V', 'I'};
+		char letras[] = new char[] {'M', 'D', 'C', 'L', 'X', 'V', 'I'};
 		
 		String result = "";
 		
