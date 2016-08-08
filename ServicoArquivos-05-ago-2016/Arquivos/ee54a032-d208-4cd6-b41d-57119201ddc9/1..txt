@@ -1,0 +1,41 @@
+Telas testadas
+
+Home > Processos > Adesão > Comercialização > Pré-inscrição
+Consegui baixar os 2 modelos de arquivos para download
+Consegui selecionar um arquivo e excluir a seleção, mas não testei o seu envio (carregar os dados).
+
+Home > Processos > Adesão > Comercialização > Prospecção e Venda
+Consegui adicionar um registro sem corretor.
+
+Home > Processos > Adesão > Inscrição em Papel > Pré-Análise
+Consegui adicionar um novo registro.
+
+Home > Processos > Adesão > Inscrição em Papel > Registro de Proposta
+Consegui registrar uma nova proposta, salvando rascunho, validando e registrando.
+
+Home > Processos > Adesão > Inscrição em Papel > Autorização de Proposta > Pela Patrocinadora/Instituidora (sem funcionalidade)
+
+Home > Processos > Adesão > Inscrição em Papel > Autorização de Proposta > Pela Entidade
+Consegui autorizar e recusar uma proposta.
+
+Home > Processos > Adesão > Inscrição em Papel > Proposta Recusada > Pela Patrocinadora/Instituidora (sem funcionalidade)
+
+Home > Processos > Adesão > Inscrição em Papel > Proposta Recusada > Pela Entidade
+Consegui visualizar uma proposta que recusei.
+
+Sugestão:
+Como não temos mais a autorização ou a recusa de uma proposta pela Patrocinadora/Instituidora e pela Entidade, sugiro retirar essas 2 opções e chamar a autorização ou a recusa de uma proposta pela Entidade direto pelo submenu anterior: "Home > Processos > Adesão > Inscrição em Papel > Autorização de Proposta" ou "Home > Processos > Adesão > Inscrição em Papel > Proposta Recusada".
+
+Home > Processos > Adesão > Implantação de Proposta > Painel (em desenvolvimento)
+Home > Processos > Adesão > Implantação de Proposta > Falha de Implantação
+
+Home > Processos > Adesão > Kit Boas Vindas > Gerados
+Consegui gerar o PDF, mas a acentuação das palavras saiu errado no arquivo.
+Não consegui testar o envio por correios, sms e e-mail.
+
+Home > Processos > Adesão > Kit Boas Vindas > Não Gerados
+Como não encontrei kits não gerados, não consegui testar as funcionalidades dessa opção.
+Home  Processos  Adesão  Manutenção de Inscrição   Painel
+
+Recomeçar daqui !
+

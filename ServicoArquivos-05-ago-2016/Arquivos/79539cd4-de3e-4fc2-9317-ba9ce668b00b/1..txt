@@ -1,0 +1,47 @@
+@echo off
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "%~dp0\MAAB.RestApi\MAAB.RestApi.sln" /t:Rebuild /p:Configuration=Debug
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "%~dp0\MAAB.TestesAceitacao\CargaDeDadosAPI.sln" /t:Rebuild /p:Configuration=Debug 
+
+FOR /D %%p IN ("C:\MaabDBs\*.*") DO rmdir "%%p" /s /q
+
+mkdir C:\MaabDBs\Global
+ 
+copy "%~dp0\MAAB.RestApi\MAAB.RestApi\ArquivosDefault\global.db" "C:\MaabDBs\Global\global.db"
+
+cd "%~dp0\MAAB.RestApi\MAAB.RestApi\bin\Debug" 
+start "MAAB.RestApi" "%~dp0\MAAB.RestApi\MAAB.RestApi\bin\Debug\MAAB.RestApi.exe"
+ 
+ping 1.1.1.1 -n 1 -w 10000 > nul
+ 
+start "IIS Financeiro" "%ProgramFiles%\IIS Express\iisexpress.exe" /path:"%~dp0MAAB.Financeiro\MAAB.Financeiro.WCF" /port:61001 /systray:true
+start "IIS Contábil" "%ProgramFiles%\IIS Express\iisexpress.exe" /path:"%~dp0MAAB.Contabil\MAAB.Contabil.WCF" /port:61002 /systray:true
+
+cd "%~dp0\MAAB.TestesAceitacao\CargaDeDadosAPI\bin\Debug" 
+REM start "Carga de dados" "%~dp0\MAAB.TestesAceitacao\CargaDeDadosAPI\bin\Debug\CargaDeDadosAPI.exe"
+"%~dp0\MAAB.TestesAceitacao\CargaDeDadosAPI\bin\Debug\CargaDeDadosAPI.exe"
+
+taskkill /F /im MAAB.RestApi.exe
+
+cd "%~dp0\MAAB.RestApi\MAAB.RestApi\bin\Debug"
+start "MAAB.RestApi" "%~dp0\MAAB.RestApi\MAAB.RestApi\bin\Debug\MAAB.RestApi.exe"
+
+ping 1.1.1.1 -n 1 -w 5000 > nul
+
+cd "%~dp0\MAAB.TestesAceitacao\GeracaoAutomaticaDeProposta\bin\Debug\"
+"%~dp0\MAAB.TestesAceitacao\GeracaoAutomaticaDeProposta\bin\Debug\MAAB.GeracaoAutomaticaDeProposta.exe" POUPREV
+
+cd "%~dp0\MAAB.TestesAceitacao\AlteracaoInscricao\bin\Debug\"
+"%~dp0\MAAB.TestesAceitacao\AlteracaoInscricao\bin\Debug\MAAB.AlteracaoInscricao.exe" POUPREV
+
+cd "%~dp0\MAAB.TestesAceitacao\Validacao.Processo.Instituto\bin\Debug"
+"%~dp0\MAAB.TestesAceitacao\Validacao.Processo.Instituto\bin\Debug\Validacao.Processo.Instituto.exe" POUPREV
+
+cd "%~dp0\MAAB.TestesAceitacao\Validacao.Processo.Beneficio\bin\Debug"
+"%~dp0\MAAB.TestesAceitacao\Validacao.Processo.Beneficio\bin\Debug\Validacao.Processo.Beneficio.exe" POUPREV
+
+chcp %cp%>nul
+
+taskkill /F /im IISExpress.exe
+
+pause

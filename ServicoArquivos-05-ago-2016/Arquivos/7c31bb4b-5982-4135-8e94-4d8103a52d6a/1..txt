@@ -1,0 +1,19 @@
+-- substituir o nome garantia para tipo de benefício
+
+- adicionar dependente ao processo de altreaao de beneficiario e alterar o nome para alteraçao de beneficioar ;/ dependente
+
+
+- registro de alterações de beneficários por tipo de beneficio em uma só tela
+
+
+- a avaliação de joia é por tpo de benefício, porem deve ser gerada somente uma cobrança
+
+
+- adicionar campo motivo na tela de avaliação de necessidade de pagtyo de joia obrigatporio quando o campo requer for = Não
+
+
+-- configurar o plano para definir se o valor da joia deve ser calculado (obttido do simulador) ou informado manuamente.
+obs> mesmo sendo calculado, o camp deve estar disponpivel para edição
+
+
+POUPREV --?  a avaliação de pagto de joia ocorre no processo de concessão de benefício
